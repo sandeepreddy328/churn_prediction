@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.vscode/
+data/processed/*.npy
+models/*.pkl
+outputs/*.csv
+outputs/*.json
+outputs/*.png
+logs/*.log
+artifacts/*
+mlruns/
+mlflow.db
