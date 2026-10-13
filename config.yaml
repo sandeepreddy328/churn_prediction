@@ -1,0 +1,40 @@
+data:
+  raw_path: "data/raw/churn.csv"
+  new_data_path: "data/raw/new_churn.csv"
+  processed_dir: "data/processed"
+  target_column: "Churn"
+  id_column: "customerID"
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "Telco-Churn-Prediction"
+
+model:
+  name: "Telco_Churn_Production_Model"
+  n_estimators: 100
+  max_depth: 10
+  class_weight: "balanced"
+  random_state: 42
+
+registry:
+  model_name: "Telco_Churn_Production_Model"
+  decision_metric: "f1_score"
+
+quality_gate:
+  metric: "f1_score"
+  min_threshold: 0.50
+
+paths:
+  artifacts: "artifacts"
+  models: "models"
+  reports: "reports"
+  logs: "logs"
+  preprocessor: "artifacts/preprocessor.joblib"
+  model: "models/churn_model.joblib"
+  evaluation_report: "reports/model_evaluation_report.json"
+  quality_gate_report: "reports/quality_gate_report.json"
+  inference_output: "outputs/inference_predictions.csv"
