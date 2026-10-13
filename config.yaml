@@ -38,3 +38,7 @@ paths:
   evaluation_report: "reports/model_evaluation_report.json"
   quality_gate_report: "reports/quality_gate_report.json"
   inference_output: "outputs/inference_predictions.csv"
+  failure_report: "reports/failure_report.json"
+
+lab9:
+  repetitions: 1
